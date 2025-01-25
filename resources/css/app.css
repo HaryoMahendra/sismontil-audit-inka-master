@@ -1,0 +1,11 @@
+.verif-open {
+    background-color: rgb(244, 252, 10);
+}
+
+.verif-approve {
+    background-color: rgb(0, 255, 72);
+}
+
+.verif-rejected {
+    background-color: red;
+}
