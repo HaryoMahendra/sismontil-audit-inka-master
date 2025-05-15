@@ -63,6 +63,7 @@ class UserSeeder extends Seeder
         //     'email' => 'hukum@gmail.com',
         //     'password' => Hash::make('123'),
         // ]);
+        
         User::updateOrCreate([
             'name' => 'wakil manajemen',
             'role_id' => '4',

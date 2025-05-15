@@ -78,13 +78,15 @@
                         <hr
                             style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                     @endif
+
+                    <li>
+                        <a href="{{ url('/faq') }}"><i class="ti-help-alt"></i><span>FAQ</span></a>
+                    </li>
                     
                     <li>
                         <a href="{{ url('/hubungi') }}"><i class="ti-headphone-alt"></i><span>Hubungi</span></a>
                     </li>
-                    <li>
-                        <a href="{{ url('/faq') }}"><i class="ti-help-alt"></i><span>FAQ</span></a>
-                    </li>
+                  
                     <hr
                             style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                     <li>

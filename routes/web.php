@@ -12,6 +12,7 @@ use App\Http\Controllers\OfiController;
 use App\Http\Controllers\TemaController;
 use App\Http\Controllers\TindakLanjutNcrController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FAQController;
 use App\Models\Ncr;
 use App\Models\Ofi;
 use App\Models\TLNcr;
@@ -163,3 +164,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
 });
 
+//usulan pengembangan 
+Route::get('/faq', [FAQController::class, 'index'])->name('faq.index');
