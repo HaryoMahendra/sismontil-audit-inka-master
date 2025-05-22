@@ -2,6 +2,19 @@
 
 @section('content')
     <div class="mt-5 ml-5">
+
+        <div class="form-group row">
+            <div class="col-sm-3">
+                <select id="dataFilter" class="form-control">
+                     <option value="all">Semua</option>
+                     <option value="internal">Internal</option>
+                    <option value="eksternal">Eksternal</option>
+                </select>
+            </div>
+        </div>
+
+        
+
         <div class="row">
             <div class="col-md-6">
                 <div class="card p-5" style="background-color:transparent">
