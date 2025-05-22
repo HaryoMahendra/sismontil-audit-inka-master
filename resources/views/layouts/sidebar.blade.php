@@ -48,8 +48,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ url('/monitoring-tl') }}"><i class="ti-write"></i><span>Monitoring
-                                    Tindak Lanjut</span></a>
+                            <a href="{{ url('/monitoring-tl') }}"><i class="ti-write"></i><span>MonitoringTindak Lanjut</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/cat') }}"><i class="ti-alert"></i><span>CAT</span></a>
                         </li>
                         <hr
                             style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
