@@ -52,6 +52,112 @@
     </div>
 
     <script>
+
+    // Start Data Dummy Pie Chart
+        var chartNCR, chartNCRClose, chartOFI, chartOFIClose;
+
+        const dummyNCR = {
+            internal: [30, 70],
+            eksternal: [70, 30]
+        };
+
+        const dummyNCRClose = {
+            internal: [60, 40],
+            eksternal: [20, 80]
+        };
+
+        const dummyOFI = {
+            internal: [30, 10, 60],
+            eksternal: [10, 20, 70]
+        };
+
+        const dummyOFIClose = {
+            internal: [65, 35],
+            eksternal: [35, 65]
+        };
+
+        function sumArrays(arr1, arr2) {
+            return arr1.map((val, idx) => val + arr2[idx]);
+        }
+
+        var ctx = document.getElementById('ChartOpenClose').getContext('2d');
+        chartNCR = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Open', 'Closed'],
+                datasets: [{
+                    data: sumArrays(dummyNCR.internal, dummyNCR.eksternal),
+                    backgroundColor: ['rgba(231, 76, 60, 1)', 'rgba(46, 204, 113, 1)'],
+                }]
+            },
+            options: {}
+        });
+
+        var ctx1 = document.getElementById('ChartClose').getContext('2d');
+        chartNCRClose = new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Efektif', 'Tidak Efektif'],
+                datasets: [{
+                    data: sumArrays(dummyNCRClose.internal, dummyNCRClose.eksternal),
+                    backgroundColor: ['rgba(88, 245, 39, 0.8)', 'rgba(245, 161, 39, 0.8)'],
+                }]
+            },
+            options: {}
+        });
+
+        var ctx2 = document.getElementById('ChartStatusDoc').getContext('2d');
+        chartOFI = new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Open', 'Cancel', 'Close'],
+                datasets: [{
+                    data: sumArrays(dummyOFI.internal, dummyOFI.eksternal),
+                    backgroundColor: ['rgba(231, 76, 60, 1)', 'rgb(255, 165, 0)', 'rgba(46, 204, 113, 1)'],
+                }]
+            },
+            options: {}
+        });
+
+        var ctx3 = document.getElementById('ChartHasilVerif').getContext('2d');
+        chartOFIClose = new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['Efektif', 'Tidak Efektif'],
+                datasets: [{
+                    data: sumArrays(dummyOFIClose.internal, dummyOFIClose.eksternal),
+                    backgroundColor: ['rgba(88, 245, 39, 0.8)', 'rgba(245, 161, 39, 0.8)'],
+                }]
+            },
+            options: {}
+        });
+
+        document.getElementById('dataFilter').addEventListener('change', function () {
+            const filter = this.value.toLowerCase();
+
+            if (filter === 'semua') {
+                chartNCR.data.datasets[0].data = sumArrays(dummyNCR.internal, dummyNCR.eksternal);
+                chartNCRClose.data.datasets[0].data = sumArrays(dummyNCRClose.internal, dummyNCRClose.eksternal);
+                chartOFI.data.datasets[0].data = sumArrays(dummyOFI.internal, dummyOFI.eksternal);
+                chartOFIClose.data.datasets[0].data = sumArrays(dummyOFIClose.internal, dummyOFIClose.eksternal);
+            } else {
+                chartNCR.data.datasets[0].data = dummyNCR[filter];
+                chartNCRClose.data.datasets[0].data = dummyNCRClose[filter];
+                chartOFI.data.datasets[0].data = dummyOFI[filter];
+                chartOFIClose.data.datasets[0].data = dummyOFIClose[filter];
+            }
+
+            chartNCR.update();
+            chartNCRClose.update();
+            chartOFI.update();
+            chartOFIClose.update();
+        });
+
+
+    // End Data Dummy Pie Chart
+
+
+
         var ctx = document.getElementById('ChartOpenClose').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
