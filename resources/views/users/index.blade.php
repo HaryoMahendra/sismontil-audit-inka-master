@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('page-title', 'Pengguna')
+@section('breadcrumb', 'Pengguna')
+
 @section('content')
     <div class="main-content-inner">
         <div class="row mt-5 mb-5">

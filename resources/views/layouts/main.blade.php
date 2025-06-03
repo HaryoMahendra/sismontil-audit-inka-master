@@ -44,6 +44,7 @@
     <!-- selectpicker -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -66,10 +67,15 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
+                            {{-- <h4 class="page-title pull-left">Dashboard</h4>
+                            {{-- <ul class="breadcrumbs pull-left">
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><span>Dashboard</span></li>
+                            </ul> --}} 
+                            <h4 class="page-title pull-left">@yield('page-title', 'Dashboard')</h4>
+                            <ul class="breadcrumbs pull-left">
+                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><span>@yield('breadcrumb', 'Dashboard')</span></li>
                             </ul>
                         </div>
                     </div>

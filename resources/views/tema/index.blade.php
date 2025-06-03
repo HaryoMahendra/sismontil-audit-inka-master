@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+
+@section('page-title', 'Tema Audit')
+@section('breadcrumb', 'Tema')
+
 @section('content')
     <div class="main-content-inner">
         <div class="row mt-5 mb-5">

@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('page-title', 'Data OFI')
+@section('breadcrumb', 'Data OFI')
+
 @section('content')
     <div class="main-content-inner">
 

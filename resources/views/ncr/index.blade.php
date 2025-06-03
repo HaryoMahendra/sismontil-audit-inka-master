@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('page-title', 'Data NCR')
+@section('breadcrumb', 'Data NCR')
+
 @section('content')
     <div class="main-content-inner">
 

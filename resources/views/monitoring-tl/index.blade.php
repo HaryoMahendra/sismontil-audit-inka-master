@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('page-title', 'Monitoring Tindak Lanjut')
+@section('breadcrumb', 'Data Tindak Lanjut')
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->

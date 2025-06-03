@@ -5,7 +5,7 @@
 
         <div class="form-group row">
             <div class="col-sm-3">
-                <select id="dataFilter" class="form-control">
+               <select id="dataFilter" class="form-control" style="border-radius: 10px;">
                      <option value="all">Semua</option>
                      <option value="internal">Internal</option>
                     <option value="eksternal">Eksternal</option>

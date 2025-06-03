@@ -13,6 +13,8 @@ use App\Http\Controllers\TemaController;
 use App\Http\Controllers\TindakLanjutNcrController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\CATController;
+use App\Http\Controllers\HubungiController;
 use App\Models\Ncr;
 use App\Models\Ofi;
 use App\Models\TLNcr;
@@ -166,3 +168,9 @@ Route::middleware('auth')->group(function () {
 
 //usulan pengembangan 
 Route::get('/faq', [FAQController::class, 'index'])->name('faq.index');
+Route::get('/cat', [CATController::class, 'index'])->name('cat.index');
+
+Route::get('/cat/ofi', [CATController::class, 'ofi']);
+Route::get('/cat/ncr', [CATController::class, 'ncr']);
+
+Route::get('/hubungi', [HubungiController::class, 'index'])->name('hubungi.index');
