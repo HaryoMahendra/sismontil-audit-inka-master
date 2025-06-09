@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('page-title', 'Data OFI')
+@section('page-title', 'Master Data')
 @section('breadcrumb', 'Data OFI')
 
 @section('content')
@@ -257,7 +257,7 @@
             </div>
         </div>
     </div>
-    </div>
+    
 
     @if (session()->has('swal_msg'))
         <script>

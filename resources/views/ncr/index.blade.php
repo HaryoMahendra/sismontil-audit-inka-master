@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('page-title', 'Data NCR')
+@section('page-title', 'Master Data')
 @section('breadcrumb', 'Data NCR')
 
 @section('content')

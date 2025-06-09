@@ -13,13 +13,12 @@
                 <div class="card-body">
                      <h2>FAQ</h2>
 
-
                     <div class="faq-wrapper">
                         @php
                             $faqs = [
                                 [
                                     'q' => 'Apa itu SIM-TL?', 
-                                    'a' => 'SIM-TL (Sistem Informasi Monitoring Tindak Lanjut) adalah sebuah platform yang dirancang untuk mempermudah pelaporan, pengawasan, dan tindak lanjut hasil temuan audit. Sistem ini memungkinkan auditor dan auditee untuk berinteraksi dalam satu tempat yang terintegrasi, sehingga mempercepat proses tindak lanjut dan memastikan bahwa semua temuan ditindaklanjuti dengan tepat waktu.'
+                                    'a' => 'SIM-TL adalah Sistem Informasi Monitoring Tindak Lanjut yang digunakan untuk memantau dan mengelola tindak lanjut hasil audit secara terstruktur dan efisien.'
                                 ],
                                 [
                                     'q' => 'Bagaimana cara melaporkan tindak lanjut hasil audit?', 
@@ -30,12 +29,8 @@
                                     'a' => 'Keamanan data menjadi prioritas utama dalam SIM-TL. Sistem ini menggunakan autentikasi pengguna, enkripsi data, dan pencatatan log aktivitas untuk memastikan bahwa setiap perubahan tercatat dengan baik. Selain itu, sistem secara berkala melakukan backup data ke server cadangan untuk mencegah kehilangan data akibat kerusakan atau gangguan sistem.'
                                 ],
                                 [
-                                    'q' => 'Siapa yang dapat mengakses SIM-TL?', 
-                                    'a' => 'Hanya pengguna yang telah terdaftar dan diberikan hak akses oleh administrator yang dapat menggunakan SIM-TL. Setiap pengguna memiliki peran masing-masing, seperti auditor, auditee, dan admin. Hak akses ditentukan berdasarkan peran tersebut untuk menjaga keamanan dan kerahasiaan informasi audit.'
-                                ],
-                                [
                                     'q' => 'Ketika terjadi kendala, harus menghubungi siapa?', 
-                                    'a' => 'Jika Anda mengalami kesulitan dalam menggunakan SIM-TL atau menemukan kesalahan sistem, Anda dapat langsung menghubungi tim dukungan teknis melalui menu "Hubungi" yang tersedia di sidebar. Tim akan merespons dan membantu Anda secepat mungkin, termasuk memberikan panduan atau memperbaiki kendala teknis yang muncul.'
+                                    'a' => 'Anda dapat memilih email salah satu petugas, pilih salah satu:<br><br><a href="' . url('/hubungi') . '" class="contact-btn">Hubungi Kami</a>'
                                 ],
                             ];
                         @endphp
@@ -63,6 +58,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <style>

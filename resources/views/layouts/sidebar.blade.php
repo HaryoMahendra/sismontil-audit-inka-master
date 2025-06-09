@@ -74,7 +74,7 @@
                         {{-- Kondisi baru untuk menu CAT untuk non-Admin --}}
                         @if (auth()->check() && auth()->user()->role && in_array(auth()->user()->role->role, ['Auditor', 'Wakil Manajemen']))
                             <li>
-                                <a href="{{ url('/cat') }}"><i class="ti-alert"></i><span>CAT</span></a>
+                                <a href="{{ route('cat.index') }}" class="nav-link"><i class="ti-alert"></i><span>CAT</span></a>
                             </li>
                         @endif
                         <hr

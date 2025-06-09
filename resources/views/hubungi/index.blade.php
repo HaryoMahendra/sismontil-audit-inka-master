@@ -112,8 +112,6 @@
         </div>
     </div>
 
-    <footer class="mt-5 text-center text-muted">
-        <p>&copy; PT. INKA (Persero)</p>
-    </footer>
+   
 </div>
 @endsection

@@ -53,7 +53,7 @@
         <div class="container white-background col-12">
             <img src="{{ asset('logoinka.png') }}" width=80%" style="margin-top:5%">
             <div class="container">
-                <h3>Sistem Monitoring Tindak Lanjut</h3>
+                <h3>Sistem Informasi Monitoring Tindak Lanjut</h3>
             </div>
 
             <br \><br \>

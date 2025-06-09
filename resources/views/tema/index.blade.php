@@ -2,7 +2,7 @@
 
 
 @section('page-title', 'Tema Audit')
-@section('breadcrumb', 'Tema')
+@section('breadcrumb', 'Tema Audit')
 
 @section('content')
     <div class="main-content-inner">
