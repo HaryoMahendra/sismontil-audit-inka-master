@@ -35,6 +35,10 @@ class DatabaseSeeder extends Seeder
             'role' => "Wakil Manajemen"
         ]);
 
+        $this->call([
+            DepartmentSeeder::class,
+        ]);
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

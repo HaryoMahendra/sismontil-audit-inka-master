@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('page-title', 'Tema Audit')
+@section('breadcrumb')
+    <li><a href="{{ url('tema') }}">Tema Audit</a></li>
+    <li class="active">Tambah Tema Audit</li>
+@endsection
+
 @section('content')
     <div class="main-content-inner">
 

@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('page-title', 'Data OFI')
+@section('breadcrumb')
+    <li><a href="{{ url('data-ofi') }}">Data OFI</a></li>
+    <li class="active">Input Data OFI</li>
+@endsection
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->

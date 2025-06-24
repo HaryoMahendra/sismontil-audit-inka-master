@@ -8,28 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('cats', function (Blueprint $table) {
             $table->id();
-            $table->string('tipe_data_audit');
-            $table->text('deskripsi_ofi')->nullable();
-            $table->text('tindakan_ofi')->nullable();
-            $table->text('temuan_ncr')->nullable();
-            $table->text('tindakan_ncr')->nullable();
+            $table->enum('is_cat', ['Ya', 'Tidak']);
+            $table->string('departemen');
+            $table->text('penyelidikan')->nullable(); // format_cat_penyelidikan
+            $table->text('perbaikan')->nullable();    // format_cat_perbaikan
+            $table->text('rencana')->nullable();       // format_cat_rencana
+            $table->string('verifikator');
+            $table->date('tanggal'); // digunakan untuk sorting
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('cats');
     }

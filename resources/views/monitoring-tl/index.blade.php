@@ -31,6 +31,21 @@
                                 <input type="date" id="maxDateFilter" class="form-control form-control-sm">
                             </div>
                         </div>
+
+
+                        <!-- Filter Tahun -->
+                            <div class="col-lg-auto mb-3 my-lg-auto ml-auto">
+                                <label for="yearFilter" class="form-label">Filter Tahun</label>
+                                <select id="yearFilter" class="form-control form-control-sm">
+                                    <option value="">Pilih Tahun</option>
+                                    @for ($i = 2020; $i <= date('Y'); $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="data-tables datatable-dark">
                             <table id="dataTable3" class="display" style="width:100%">
                                 <thead class="thead-dark">

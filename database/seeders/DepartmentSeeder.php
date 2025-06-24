@@ -2,18 +2,22 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DepartemenSeeder extends Seeder
+class DepartmentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
-        //
+        DB::table('departemen')->insert([
+            ['div_name' => 'QMSHE', 'created_at' => now(), 'updated_at' => now()],
+            ['div_name' => 'Hukum', 'created_at' => now(), 'updated_at' => now()],
+            ['div_name' => 'Teknologi', 'created_at' => now(), 'updated_at' => now()],
+            ['div_name' => 'Keuangan', 'created_at' => now(), 'updated_at' => now()],
+            ['div_name' => 'Sumber Daya Manusia', 'created_at' => now(), 'updated_at' => now()], 
+        ]);
     }
 }

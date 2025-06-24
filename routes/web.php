@@ -174,4 +174,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cat', [CATController::class, 'store'])->name('cat.store');
 });
 
+// Route untuk menampilkan form CAT
+Route::get('/cat/add', [CATController::class, 'add'])->middleware('auth')->name('cat.add');
+Route::get('/cat/{id}', [CATController::class, 'show'])->middleware('auth')->name('cat.show');
+Route::get('/cat/{id}/edit', [CATController::class, 'edit'])->middleware('auth')->name('cat.edit');
+Route::put('/cat/{id}', [CATController::class, 'update'])->middleware('auth')->name('cat.update');
+Route::delete('/cat/{id}', [CATController::class, 'destroy'])->middleware('auth')->name('cat.destroy');
+Route::get('/cat/export/excel', [App\Http\Controllers\CATController::class, 'exportExcel'])->name('cat.exportExcel');
+
+
+
+
 Route::get('/hubungi', [HubungiController::class, 'index'])->name('hubungi.index');

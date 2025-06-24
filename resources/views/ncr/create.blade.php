@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('page-title', 'Data NCR')
+@section('breadcrumb')
+    <li><a href="{{ url('data-ncr') }}">Data NCR</a></li>
+    <li class="active">Input Data NCR</li>
+@endsection
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->
@@ -15,6 +21,16 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
+                                    {{-- Form input untuk tanggal terbit NCR dan deadline  --}}
+                                    <div class="form-group">
+                                        <label for="no_ncr" class="form-label">No NCR <span class="text-danger"> * </span></label>
+                                        <input type="text" name="no_ncr" id="no_ncr"
+                                            class="form-control {{ $errors->first('no_ncr') ? 'is-invalid' : '' }}"
+                                            value="{{ old('no_ncr') }}">
+                                        @if ($errors->has('no_ncr'))
+                                            <span class="text-danger">{{ $errors->first('no_ncr') }}</span>
+                                        @endif
+                                    </div>
                                     <div class="form-group">
                                         <label for="colFormLabel" class="form-label">Periode audit <span
                                                 class="text-danger"> * </span> </label>
@@ -84,6 +100,21 @@
                                             <span class="text-danger">{{ $errors->first('bab_audit') }}</span>
                                         @endif
                                     </div>
+
+                                    {{-- tambah form dokumen bab relevan --}}
+                                    <div class="form-group">
+                                        <label for="dokumen_bab_relevan" class="form-label">
+                                            Dokumen Bab yang Relevan <span class="text-danger">*</span>
+                                        </label>
+                                        <textarea name="dokumen_bab_relevan" id="dokumen_bab_relevan"
+                                            class="form-control {{ $errors->first('dokumen_bab_relevan') ? 'is-invalid' : '' }}"
+                                            rows="3">{{ old('dokumen_bab_relevan') }}</textarea>
+                                        @if ($errors->has('dokumen_bab_relevan'))
+                                            <span class="text-danger">{{ $errors->first('dokumen_bab_relevan') }}</span>
+                                        @endif
+                                    </div>
+
+
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">

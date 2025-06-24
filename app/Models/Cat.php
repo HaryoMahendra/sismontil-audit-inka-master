@@ -10,10 +10,14 @@ class Cat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tipe_data_audit',
-        'deskripsi_ofi',
-        'tindakan_ofi',
-        'temuan_ncr',
-        'tindakan_ncr',
-    ];
+    'is_cat',
+    'departemen',
+    'penyelidikan',
+    'perbaikan',
+    'rencana',
+    'verifikator',
+    'tanggal',
+];
+
+
 }

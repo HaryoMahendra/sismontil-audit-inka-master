@@ -4,14 +4,15 @@
 @section('page-title', 'FAQ')
 @section('breadcrumb', 'FAQ')
 
-
 @section('content')
 <div class="main-content-inner">
     <div class="row mt-5 mb-5">
         <div class="col-12">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-body">
-                     <h2>FAQ</h2>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="fw-bold mb-0">FAQ</h2>
+                    </div>
 
                     <div class="faq-wrapper">
                         @php
@@ -45,77 +46,71 @@
                                 </button>
                                 <div class="faq-answer" id="answer{{ $index }}">
                                     {!! $faq['a'] !!}
-                                    
-                                    @if ($index === 4)
-                                    <div style="margin-top: 15px;">
-                                        <a href="{{ url('/hubungi') }}" class="contact-btn">Hubungi Kami</a>
-                                    </div>
-                                    @endif
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 
 <style>
     .faq-wrapper {
         max-width: 1100px;
-        margin: 30px auto;
-    }
-
-    .faq-title {
-        font-size: 30px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 20px;
+        margin: 0 auto;
     }
 
     .faq-item {
-    margin-bottom: 15px;
-    border: none; /* Default: tanpa border */
-    border-radius: 5px;
-    overflow: hidden;
-    min-height: 80px;
-    
-}
+        margin-bottom: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+    }
 
-.faq-item.open {
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Mirip shadow di gambar */
-}
-
-
+    .faq-item:hover {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
 
     .faq-question {
         width: 100%;
-        font-size: 19px;
+        font-size: 18px;
+        font-weight: 600;
         text-align: left;
         padding: 18px 22px;
-        background-color: #f0f0f0;
+        background-color: #f8f9fa;
         border: none;
         cursor: pointer;
-        font-weight: 600;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: background-color 0.2s ease;
     }
 
     .faq-question:hover {
-        background-color: #e0e0e0;
+        background-color: #e9ecef;
     }
 
     .faq-answer {
         padding: 20px 25px;
         display: none;
         background-color: #fff;
-        font-size: 17px;
+        font-size: 16px;
         color: #444;
         line-height: 1.7;
         text-align: justify;
+        border-top: 1px solid #e0e0e0;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .arrow-icon i {
@@ -126,48 +121,46 @@
     .arrow-icon.rotate i {
         transform: rotate(180deg);
     }
+
     .contact-btn {
-    display: inline-block;
-    padding: 10px 18px;
-    background-color: #28a745;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
+        display: inline-block;
+        padding: 10px 18px;
+        background-color: #0d6efd;
+        color: white;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
 
-.contact-btn:hover {
-    background-color: #218838;
-}
-
-
+    .contact-btn:hover {
+        background-color: #0b5ed7;
+    }
 </style>
 
 <script>
     function toggleAnswer(id) {
-    const answer = document.getElementById('answer' + id);
-    const icon = document.getElementById('arrow' + id);
-    const faqItem = answer.closest('.faq-item');
+        const answer = document.getElementById('answer' + id);
+        const icon = document.getElementById('arrow' + id);
+        const faqItem = answer.closest('.faq-item');
 
-    const isVisible = answer.style.display === 'block';
+        const isVisible = answer.style.display === 'block';
 
-    // Tutup semua
-    document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-    document.querySelectorAll('.arrow-icon i').forEach(icon => {
-        icon.classList.remove('fa-angle-up');
-        icon.classList.add('fa-angle-down');
-    });
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+        document.querySelectorAll('.arrow-icon i').forEach(i => {
+            i.classList.remove('fa-angle-up');
+            i.classList.add('fa-angle-down');
+        });
 
-    // Buka jika belum terlihat
-    if (!isVisible) {
-        answer.style.display = 'block';
-        icon.querySelector('i').classList.remove('fa-angle-down');
-        icon.querySelector('i').classList.add('fa-angle-up');
-        faqItem.classList.add('open');
+        // Toggle current
+        if (!isVisible) {
+            answer.style.display = 'block';
+            icon.querySelector('i').classList.remove('fa-angle-down');
+            icon.querySelector('i').classList.add('fa-angle-up');
+            faqItem.classList.add('open');
+        }
     }
-}
-
 </script>
 @endsection

@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('page-title', 'Pengguna')
+@section('breadcrumb')
+    <li><a href="{{ url('user') }}">Pengguna</a></li>
+    <li class="active">Tambah Pengguna</li>
+@endsection
+
 @section('content')
     <div class="main-content-inner">
         <div class="row mt-5 mb-5">

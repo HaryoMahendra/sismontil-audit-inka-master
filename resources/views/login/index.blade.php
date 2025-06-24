@@ -87,8 +87,7 @@
                             placeholder="Password" name="password" required value="{{ old('password') }}">
                     </div>
                     <div style="color:red">
-                        <p>Lupa username atau password hubungi admin1
-                        </p>
+                        <p>Lupa username atau password hubungi admin1</p>
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary btn-full-width" name="btn-login">Masuk</button>

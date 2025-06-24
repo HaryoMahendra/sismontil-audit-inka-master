@@ -9,8 +9,7 @@
         </div>
         <div class="info pl-3">
             @if (auth()->check())
-                <div style="color: #8d97ad !important;">Hi, <a href="{{ url('/') }}"
-                        style="color: #8d97ad !important;">
+                <div style="color: #8d97ad !important;">Hi, <a href="{{ url('/') }}" style="color: #8d97ad !important;">
                         {{ auth()->user()->name }}</a></div>
                 <span class="badge badge-success">
                     {{ auth()->user()->role->role }}
@@ -25,72 +24,59 @@
             <nav>
                 <ul class="metismenu" id="menu">
                     <li>
-                        <a href="{{ url('/') }}"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+                        <a href="{{ url('/') }}" class="d-flex align-items-center" style="flex: 1;">
+                            <i class="ti-dashboard"></i>
+                            <span style="color: #8d97ad; margin-left: 8px;">Dashboard</span>
+                        </a>
                     </li>
+
+                    <!-- Sidebar items lainnya -->
                     @if (auth()->check() && auth()->user()->role && auth()->user()->role->role == 'Admin')
-                        <hr
-                            style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
+                        <hr style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                         <li>
-                            <a href="#" aria-expanded="true"><i class="ti-layout"></i><span>Master
-                                        Data</span></a>
+                            <a href="#" aria-expanded="true"><i class="ti-layout"></i><span>Master Data</span></a>
                             <ul class="collapse">
                                 <li><a href="{{ url('/data-ncr') }}">Data NCR</a></li>
                                 <li><a href="{{ url('/data-ofi') }}">Data OFI</a></li>
+                                <li><a href="{{ url('/cat') }}">Data CAT</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="{{ url('/monitoring-tl') }}"><i class="ti-write"></i><span>Monitoring Tindak Lanjut</span></a>
                         </li>
-                        {{-- Kondisi baru untuk menu CAT --}}
-                        @if (auth()->check() && auth()->user()->role && in_array(auth()->user()->role->role, ['Admin', 'Auditor', 'Wakil Manajemen']))
-                            <li>
-                                <a href="{{ url('/cat') }}"><i class="ti-alert"></i><span>CAT</span></a>
-                            </li>
-                        @endif
-                        <hr
-                            style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
+                        <hr style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                         <li>
-                            <a href="{{ route('tema.index') }}"><i class="fa-solid fa-clipboard-list"></i><span>Tema
-                                        Audit</span></a>
+                            <a href="{{ route('tema.index') }}"><i class="fa-solid fa-clipboard-list"></i><span>Tema Audit</span></a>
                         </li>
                         <li>
                             <a href="{{ route('user.index') }}"><i class="fa-solid fa-users"></i><span>Pengguna</span></a>
                         </li>
-                        <hr
-                            style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
+                        <hr style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                     @else
                         <li>
-                            <a href="#" aria-expanded="true"><i class="ti-layout"></i><span>Master
-                                        Data</span></a>
+                            <a href="#" aria-expanded="true"><i class="ti-layout"></i><span>Master Data</span></a>
                             <ul class="collapse">
                                 <li><a href="{{ url('/data-ncr') }}">Data NCR</a></li>
                                 <li><a href="{{ url('/data-ofi') }}">Data OFI</a></li>
+                                @if (auth()->check() && auth()->user()->role && in_array(auth()->user()->role->role, ['Wakil Manajemen']))
+                                    <li><a href="{{ route('cat.index') }}">CAT</a></li>
+                                @endif
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ url('/monitoring-tl') }}"><i class="ti-write"></i><span>Monitoring
-                                        Tindak Lanjut</span></a>
+                            <a href="{{ url('/monitoring-tl') }}"><i class="ti-write"></i><span>Monitoring Tindak Lanjut</span></a>
                         </li>
-                        {{-- Kondisi baru untuk menu CAT untuk non-Admin --}}
-                        @if (auth()->check() && auth()->user()->role && in_array(auth()->user()->role->role, ['Auditor', 'Wakil Manajemen']))
-                            <li>
-                                <a href="{{ route('cat.index') }}" class="nav-link"><i class="ti-alert"></i><span>CAT</span></a>
-                            </li>
-                        @endif
-                        <hr
-                            style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
+                        <hr style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                     @endif
 
-                     <li>
+                    <li>
                         <a href="{{ url('/hubungi') }}"><i class="ti-headphone-alt"></i><span>Hubungi</span></a>
                     </li>
                     
                     <li>
                         <a href="{{ url('/faq') }}"><i class="ti-help-alt"></i><span>FAQ</span></a>
                     </li>
-                  
-                    <hr
-                            style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
+                   <hr style="display: block; height: 1px; border: 0; border-top: 1px solid #343e50; margin: 1em 0; margin-left: 32px; margin-right: 32px;">
                     <li>
                         <a href="{{ url('logout') }}"><i class="ti-power-off"></i><span>Logout</span></a>
                     </li>
