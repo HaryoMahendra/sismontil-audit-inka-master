@@ -45,9 +45,48 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+    body.light-mode {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    body.dark-mode {
+        background-color: #1e1e2f;
+        color: #f5f5f5;
+    }
+
+    .dark-mode .main-content,
+    .dark-mode .card,
+    .dark-mode .page-title-area,
+    .dark-mode .footer-area {
+        background-color: #2d2d3e !important;
+        color: #f5f5f5 !important;
+    }
+
+    .dark-mode .dataTables_wrapper,
+    .dark-mode table {
+        background-color: #3b3b50;
+        color: #ffffff;
+    }
+
+    .dark-mode .form-control,
+    .dark-mode .selectpicker,
+    .dark-mode select {
+        background-color: #444;
+        color: #fff;
+        border-color: #666;
+    }
+
+    .theme-toggle:hover {
+        transform: rotate(15deg);
+    }
+</style>
+
 </head>
 
-<body>
+<body class="light-mode">
     <div id="preloader">
         <div class="loader"></div>
     </div>
@@ -251,6 +290,28 @@
             }).then((result) => {})
         </script>
     @endif
+
+    <script>
+    const setTheme = (mode) => {
+        document.body.classList.remove('light-mode', 'dark-mode');
+        document.body.classList.add(mode);
+        document.getElementById("themeIcon").className = mode === "dark-mode" ? "fas fa-sun" : "fas fa-moon";
+        localStorage.setItem("theme", mode);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme") || "light-mode";
+        setTheme(savedTheme);
+
+        const toggle = document.getElementById("themeToggle");
+        toggle?.addEventListener("click", (e) => {
+            e.preventDefault();
+            const current = document.body.classList.contains("dark-mode") ? "dark-mode" : "light-mode";
+            setTheme(current === "dark-mode" ? "light-mode" : "dark-mode");
+        });
+    });
+</script>
+
 
     @stack('scripts')
 

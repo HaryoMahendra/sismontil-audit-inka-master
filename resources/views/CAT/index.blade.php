@@ -136,8 +136,7 @@
 <script>
     function confirmDelete(id) {
         Swal.fire({
-            title: 'Yakin ingin menghapus data ini?',
-            text: "Tindakan ini tidak dapat dibatalkan!",
+            title: 'Apakah Anda yakin ingin menghapus data ini?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#e3342f',

@@ -42,7 +42,7 @@
                                             <td class="text-center">{{ $user->role->role }}</td>
                                             <td class="text-center">
                                                 @foreach ($departemen as $dept)
-                                                    @if ($user->departement_id == $dept['div_code'])
+                                                    @if ($user->departement_id == $dept['div_name'])
                                                         {{ $dept['div_name'] }}
                                                     @endif
                                                 @endforeach

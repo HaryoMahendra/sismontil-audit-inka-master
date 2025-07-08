@@ -227,10 +227,6 @@
     </div>
 </div>
 
-
-
-
-
 <script>
     const barDataByFilter = {
       '2023': {

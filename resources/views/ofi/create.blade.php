@@ -22,6 +22,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label for="no_ofi" class="form-label">No OFI <span class="text-danger"> * </span></label>
+                                        <input type="text" name="no_ofi" id="no_ofi"
+                                            class="form-control {{ $errors->first('no_ofi') ? 'is-invalid' : '' }}"
+                                            value="{{ old('no_ofi') }}">
+                                        @if ($errors->has('no_ofi'))
+                                            <span class="text-danger">{{ $errors->first('no_ofi') }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="form-group">
                                         <label for="colFormLabel" class="form-label">Kepada <span class="text-danger"> *</span> </label>
                                         <select name="kepada" id="kepada"
                                             class="form-control {{ $errors->first('kepada') ? 'is-invalid' : '' }}">

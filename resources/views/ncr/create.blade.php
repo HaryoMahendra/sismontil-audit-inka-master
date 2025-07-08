@@ -20,7 +20,7 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6">
+                                 <div class="col-md-6 mb-3">
                                     {{-- Form input untuk tanggal terbit NCR dan deadline  --}}
                                     <div class="form-group">
                                         <label for="no_ncr" class="form-label">No NCR <span class="text-danger"> * </span></label>
@@ -113,11 +113,7 @@
                                             <span class="text-danger">{{ $errors->first('dokumen_bab_relevan') }}</span>
                                         @endif
                                     </div>
-
-
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
+                                     <div class="form-group">
                                         <label for="colFormLabel" class="form-label">Dokumen acuan <span
                                                 class="text-danger"> * </span></label>
                                         <input type="text" name="dok_acuan"
@@ -127,7 +123,10 @@
                                             <span class="text-danger">{{ $errors->first('dok_acuan') }}</span>
                                         @endif
                                     </div>
-                                    <div class="form-group">
+                                </div>
+
+                                 <div class="col-md-6 mb-3">
+                                                                       <div class="form-group">
                                         <label for="colFormLabel" class="form-label">Uraian ketidaksesuaian <span
                                                 class="text-danger"> * </span></label>
                                         <textarea class="form-control {{ $errors->first('uraian_ncr') ? 'is-invalid' : '' }}" name="uraian_ncr" id="uraian_ncr"
@@ -151,6 +150,28 @@
                                             <span class="text-danger">{{ $errors->first('kategori') }}</span>
                                         @endif
                                     </div>
+
+                                    <div class="form-group">
+    <label for="jenis_temuan" class="form-label">Jenis Temuan <span class="text-danger">*</span></label>
+    <select name="jenis_temuan" id="jenis_temuan" class="form-control" required>
+        <option value="" disabled selected>- Pilih -</option>
+        <option value="NCR">NCR</option>
+        <option value="OFI">OFI</option>
+        <option value="CAT">CAT</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="tgl_terbitncr" class="form-label">Tanggal Terbit <span class="text-danger">*</span></label>
+    <input type="date" name="tgl_terbitncr" id="tgl_terbitncr" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="tgl_deadline" class="form-label">Tanggal Deadline</label>
+    <input type="date" name="tgl_deadline" id="tgl_deadline" class="form-control" readonly>
+</div>
+
+
                                     <div class="form-group">
                                         <label for="colFormLabel" class="form-label">Nama Auditor <span class="text-danger">*</span></label>
                                         <select name="nama_auditor" id="nama_auditor" class="selectpicker form-control" data-live-search="true" data-size="5" style="border: 1px solid #ced4da;">

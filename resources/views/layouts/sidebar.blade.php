@@ -1,7 +1,13 @@
 <div class="sidebar-menu">
-    <div class="sidebar-header">
+    {{-- <div class="sidebar-header">
         <a href="{{ url('/') }}"><img src="{{ asset('logoinka.png') }}" alt="logo" width="500%"></a>
-    </div>
+    </div> --}}
+    <div class="sidebar-header">
+    <a href="https://www.inka.co.id/" target="_blank">
+        <img src="{{ asset('logoinka.png') }}" alt="logo" width="500%">
+    </a>
+</div>
+
     <div class="user-panel mt-3 pb-0 mb-3 d-flex" style="padding-left: 32px; padding-right: 32px;">
         <div class="image">
             <img src="https://www.businessnetworks.com/sites/default/files/default_images/default-avatar.png"
@@ -59,7 +65,7 @@
                                 <li><a href="{{ url('/data-ncr') }}">Data NCR</a></li>
                                 <li><a href="{{ url('/data-ofi') }}">Data OFI</a></li>
                                 @if (auth()->check() && auth()->user()->role && in_array(auth()->user()->role->role, ['Wakil Manajemen']))
-                                    <li><a href="{{ route('cat.index') }}">CAT</a></li>
+                                    <li><a href="{{ route('cat.index') }}">Data CAT</a></li>
                                 @endif
                             </ul>
                         </li>
