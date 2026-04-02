@@ -126,11 +126,36 @@
     cursor: pointer;
 }
 
+    /* Gaya header default */
+.header-area {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header untuk light mode */
+body.light-mode .header-area {
+    background-color: #ffffff;
+    color: #212529;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Header untuk dark mode */
+body.dark-mode .header-area {
+    background-color: #1e1e2f;
+    color: #f8f9fa;
+    border-bottom: 1px solid #343a40;
+}
+
+/* Warna teks dalam header saat dark mode */
+body.dark-mode .header-area h5,
+body.dark-mode .header-area a,
+body.dark-mode .header-area i {
+    color: #f8f9fa !important;
+}
 
 </style>
 
 <!-- Header -->
-<div class="header-area bg-white border-bottom py-2 px-3">
+<div class="header-area py-2 px-3">
     <div class="d-flex justify-content-between align-items-center">
         <!-- Kiri: Judul -->
         <div class="d-flex align-items-center">
@@ -161,7 +186,7 @@
         <button class="theme-option" data-mode="dark-mode">Gelap</button>
     </div>
 
-    <!-- Bahasa -->
+    {{-- <!-- Bahasa -->
     <label>Bahasa</label>
     <div class="language-options d-flex flex-column gap-2">
         <label class="language-radio">
@@ -172,7 +197,7 @@
             <input type="radio" name="language" value="en" />
             <span>Inggris</span>
         </label>
-    </div>
+    </div> --}}
 </div>
 
             </div>

@@ -9,7 +9,7 @@
 <div class="main-content-inner">
     <div class="row mt-5 mb-5">
         <div class="col-12">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm">    
                 <div class="card-body">
                     <h5 class="mb-4">Form Tambah Data CAT</h5>
 
@@ -38,9 +38,6 @@
                                 <option value="Produksi">Produksi</option>
                             </select>
                         </div>
-
-
-
 
 
                         <div class="form-group">

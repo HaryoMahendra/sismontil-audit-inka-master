@@ -82,6 +82,68 @@
     .theme-toggle:hover {
         transform: rotate(15deg);
     }
+    body.dark-mode .card,
+body.dark-mode .card-body,
+body.dark-mode .apexcharts-canvas,
+body.dark-mode .chart-container,
+body.dark-mode .table,
+body.dark-mode .form-select,
+body.dark-mode .selectpicker,
+body.dark-mode .dropdown-menu,
+body.dark-mode select,
+body.dark-mode .btn,
+body.dark-mode .btn-outline-secondary,
+body.dark-mode .btn-outline-primary {
+    background-color: #2d2d3e !important;
+    color: #f5f5f5 !important;
+    border-color: #444 !important;
+}
+
+/* Aktifkan warna teks filter */
+body.dark-mode .form-control,
+body.dark-mode .btn,
+body.dark-mode label,
+body.dark-mode h5,
+body.dark-mode h4,
+body.dark-mode select option {
+    color: #f5f5f5 !important;
+}
+
+/* Ubah hover button/tab */
+body.dark-mode .btn:hover,
+body.dark-mode .btn:focus {
+    background-color: #3e3e50 !important;
+    color: #fff !important;
+}
+
+/* Styling tab button aktif */
+body.dark-mode .btn.active,
+body.dark-mode .btn-primary {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Ubah warna tabel atau chart yang default-nya putih */
+body.dark-mode canvas,
+body.dark-mode .dataTables_wrapper {
+    background-color: #2d2d3e !important;
+    color: #fff !important;
+}
+
+/* Tooltip / Dropdown bahasa */
+body.dark-mode .dropdown-menu.show {
+    background-color: #2d2d3e;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+/* Apexcharts dark mode jika digunakan */
+body.dark-mode .apexcharts-tooltip {
+    background: #2d2d3e !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
 </style>
 
 </head>
@@ -151,7 +213,6 @@
             </div>
 
             @yield('content')
-
         </div>
 
         <footer>
@@ -160,8 +221,6 @@
             </div>
         </footer>
     </div>
-
-
 
 
     <script src="{{ asset('assets/js/vendor/jquery-2.2.4.min.js') }}"></script>
